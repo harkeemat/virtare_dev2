@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>Virtare Health</title>
+  <!-- <link rel="stylesheet" type="text/css" href="./demo/demo-2.css?v1" /> -->
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app" class="h-100">
+
+  </div>
+  <!-- built files will be auto injected -->
+  <script type="text/javascript" src="https://ditstek.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/1kwsvv/b/8/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=9f379a6f"></script>
+
+  <script>
+  
+    function popupShow(event) {
+      var card = document.getElementById(event);
+      var mytable = document.getElementsByClassName("fc-scrollgrid-sync-table")[0]
+      var myrows = mytable.getElementsByTagName("tr");
+      var lastrow = myrows[myrows.length - 1];
+      var secondLastRow = myrows[myrows.length - 2]
+      var thirdLastRow = myrows[myrows.length - 3]
+      var fourthLastRow = myrows[myrows.length - 4]
+
+      if (card.style.display === "block") {
+        card.closest('td').classList.remove('popup_open_top')
+        card.closest('td').classList.remove('popup_open')
+        card.closest('td').classList.remove('calendarLastCol')
+        card.closest('.fc-daygrid-event-harness').classList.remove('popup_element')
+        card.style.display = "none";
+      } else {
+        var drowdown = document.getElementsByClassName("ant-dropdown")
+        for (var i = 0; i < drowdown.length; i++) {
+
+          if (drowdown[i].style.display === "block") {
+
+            drowdown[i].closest('td').classList.remove('popup_open_top')
+
+            drowdown[i].closest('td').classList.remove('popup_open')
+
+            drowdown[i].closest('td').classList.remove('calendarLastCol')
+            drowdown[i].closest('.fc-daygrid-event-harness').classList.remove('popup_element')
+            drowdown[i].style.display = "none";
+          }
+        }
+        card.style.display = "block"
+        if (lastrow.rowIndex == card.closest('tr').rowIndex || secondLastRow.rowIndex == card.closest('tr').rowIndex || thirdLastRow.rowIndex == card.closest('tr').rowIndex || fourthLastRow.rowIndex == card.closest('tr').rowIndex) {
+          card.closest('td').classList.add('popup_open_top')
+        }
+        card.closest('td').classList.add('popup_open')
+        if (card.closest('tr').lastChild.previousSibling == card.closest('td') || card.closest('tr').lastChild == card.closest('td')) {
+          card.closest('td').classList.add('calendarLastCol')
+        }
+
+        card.closest('.fc-daygrid-event-harness').classList.add('popup_element')
+      }
+
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+
+body.test {
+    &.show {
+        .ant-layout {
+            .ant-layout-has-sider {
+                padding-left:74px;
+                .ant-layout-sider {
+                    width: 74px!important;
+                    min-width: 74px!important;
+                    .menuList {
+                        .ant-menu  {
+                            .ant-menu-item {
+                                .ant-menu-title-content {
+                                    span {
+                                        &.menuItem {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ant-layout {
+    background-color: transparent !important;
+    .ant-layout-content {
+        // padding: 12px;
+        height: 100%;
+        // overflow: auto;
+    }
+    .ant-layout-has-sider {
+        padding-top: 64px;
+        min-height: calc(100vh - 64px);
+        padding-left: 200px;
+        transition: all 0.5s !important;
+        // background-color: rgba(107,184,110,.5);
+        @media screen and (max-width: 991px) {
+            padding-left: 0px;
+        }
+        .ant-layout-sider {
+            background: #fff;
+            z-index: 99;
+            transition: all 0.5s !important;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            border-right: 1px solid #f4f4f4;
+
+            // height: calc(100vh - 64px) !important;
+            // @media screen and (max-width: 991px) {
+            //     left: -200px !important;
+            // }
+            .ant-layout-sider-children {
+                position: relative;
+                .menuList {
+                    height: calc(100% - 104px);
+                    overflow: auto;
+                    -ms-overflow-style: none; /* IE and Edge */
+                    scrollbar-width: none; /* Firefox */
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .ant-menu {
+                        border: none;
+
+                        .ant-menu-item {
+                            color: #000 !important;
+                            margin: 0;
+                            padding: 2px 12px!important;
+                            height: auto;
+                            &::after {
+                                display: none !important;
+                            }
+                            .ant-menu-title-content {
+                                .anticon {
+                                    position: relative;
+                                    top: -3px;
+                                    font-size: 20px;
+                                }
+                            }
+                            &.ant-menu-item-selected {
+                                background-color: #fff !important;
+                            }
+                            a {
+                                padding: 0 15px;
+                                color: #5f6871;
+                                display: block;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                border-radius: 5px;
+                                font-size: 13px;
+                                &.router-link-active {
+                                    background-color: #e8eaf0 !important;
+                                    font-family: $font-family-bold;
+                                    color: #25292f;
+                                }
+                                &:hover {
+                                    background-color: #eaeaec;
+                                }
+                            }
+                            &:hover {
+                                background-color: #fff;
+                            }
+                        }
+                        &.router-link-active {
+                            .ant-menu-item {
+                                background-color: #e8eaf0 !important;
+                            }
+                        }
+                    }
+                }
+                .version {
+                    position: absolute;
+                    left: 0;
+                    right: 16px;
+                    text-align: center;
+                    color: #000;
+                    font-size: 14px;
+                    bottom: 0;
+                    background-color: #fff;
+                    padding: 10px 0;
+                }
+            }
+            .icon {
+                display: flex;
+                align-items: center;
+                height: 64px;
+                padding: 0 0 0 25px;
+                svg {
+                  font-size: 20px;
+                  cursor: pointer;                  
+                }
+              }
+        }
+    }
+}
+.subMenu {
+    .questionnaireMenu {
+        position: relative;
+        color: #000;
+        margin: 0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .menuItem {
+            margin: 0 0 0 10px;
+        }
+        .anticon.anticon-down {
+            margin: 0 0 0 10px;
+        }
+        .anticon.anticon-up {
+            margin: 0 0 0 10px;
+        }
+    }
+    .dropDown {
+        padding-left: 10px;
+    }
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: transparent !important;
+}
